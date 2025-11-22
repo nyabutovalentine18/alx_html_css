@@ -1,21 +1,11 @@
-/* CSS Reset and Variables */
-:root {
-    /* Colors - Update based on Figma design */
-    --primary-color: #FF6565;
-    --secondary-color: #071629;
-    --text-color: #333333;
-    --light-bg: #FFFFFF;
-    --dark-bg: #071629;
-    
-    /* Typography - Update with actual font names */
-    --font-primary: 'Source Sans Pro', sans-serif;
-    --font-secondary: 'Spin-Cycle-OT', serif;
-    
-    /* Spacing */
-    --section-padding: 80px 0;
-    --container-width: 1200px;
-}
+/* styles.css */
+/*! 
+ * CSS Advanced Project
+ * ALX Software Engineering Program
+ * Following Figma design specifications
+ */
 
+/* CSS Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -27,151 +17,83 @@ html {
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
+    color: #333;
 }
 
+/* Container for consistent layout */
 .container {
-    max-width: var(--container-width);
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header Styles */
-.header {
-    background: var(--light-bg);
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+/* Utility Classes */
+.text-center {
+    text-align: center;
 }
 
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.hidden {
+    display: none;
 }
 
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 30px;
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.nav-link {
+/* Basic Link Styles */
+a {
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    transition: color 0.3s ease;
+    color: inherit;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-    color: var(--primary-color);
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid #FF6565;
+    outline-offset: 2px;
 }
 
-/* Hero Section */
-.hero {
-    padding: 120px 0 80px;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #1a365d 100%);
-    color: white;
-}
-
-.hero .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.hero-title {
-    font-family: var(--font-secondary);
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.hero-button {
-    background: var(--primary-color);
-    color: white;
+/* Basic Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
     border: none;
-    padding: 15px 30px;
     border-radius: 25px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.hero-button:hover {
-    transform: translateY(-2px);
-}
-
-/* Services Section */
-.services {
-    padding: var(--section-padding);
-}
-
-.section-title {
+    font-family: inherit;
+    font-weight: 600;
     text-align: center;
-    font-family: var(--font-secondary);
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+    transition: all 0.3s ease;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+/* Section Spacing */
+.section {
+    padding: 80px 0;
 }
 
-.service-card {
-    text-align: center;
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.service-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-/* Footer */
-.footer {
-    background: var(--dark-bg);
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-}
-
-/* Responsive Design */
+/* Mobile First Approach */
 @media (max-width: 768px) {
-    .hero .container {
-        flex-direction: column;
-        text-align: center;
+    .container {
+        padding: 0 15px;
     }
     
-    .nav-list {
-        flex-direction: column;
-        gap: 15px;
+    .section {
+        padding: 60px 0;
     }
-    
-    .hero-title {
-        font-size: 2.5rem;
+}
+
+/* Print Styles */
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
     }
 }
