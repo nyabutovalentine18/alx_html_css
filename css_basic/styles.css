@@ -78,13 +78,42 @@ table th {
     font-weight: bold;
 }
 
-/* Basic responsive behavior */
+/* Smartphone responsive behavior */
+/* When the body has class works_on_smartphone, adjust layout for small screens */
+body.works_on_smartphone main {
+    flex-direction: column;
+}
+
+body.works_on_smartphone article,
+body.works_on_smartphone aside {
+    flex: 1;
+    width: 100%;
+}
+
+/* Additional responsive improvements for smartphones */
 @media (max-width: 768px) {
-    main {
+    body.works_on_smartphone header ul {
         flex-direction: column;
+        gap: 10px;
     }
     
-    article, aside {
-        flex: 1;
+    body.works_on_smartphone article,
+    body.works_on_smartphone aside {
+        padding: 15px;
     }
+    
+    body.works_on_smartphone table {
+        font-size: 14px;
+    }
+    
+    body.works_on_smartphone table th,
+    body.works_on_smartphone table td {
+        padding: 8px;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
 }
